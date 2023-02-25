@@ -1,6 +1,5 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const session = require('express-session')
 
 const port = 4000
 
@@ -16,21 +15,10 @@ const accountRoute = require('./routes/accounts')
 const transactionRoute = require('./routes/transactions')
 
 
-app.use(session({
-    secret: 'a7snt ahsent احسنت',
-    saveUninitialized: true,
-    resave: false,
-    cookie: {
-        maxAge: 60000
-    }
-}))
-app.use(passport.initialize())
-app.use(passport.session())
-
 app.use('/', indexRoute)
-app.use('/', authRoute)
-app.use('/', accountRoute)
-app.use('/', transactionRoute)
+// app.use('/', authRoute)
+// app.use('/', accountRoute)
+// app.use('/', transactionRoute)
 
 
 
