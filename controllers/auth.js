@@ -49,3 +49,11 @@ exports.auth_signout_get = (req, res) => {
 exports.auth_forget_get = (req, res) => {
     res.render('auth/forget')
 }
+
+exports.auth_update_get = (req, res) => {
+    res.render('auth/updatepassword')
+}
+
+exports.auth_forget_post = (req, res) => {
+    res.redirect('/auth/updatepassword')
+}
