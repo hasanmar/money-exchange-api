@@ -33,8 +33,8 @@ app.use(passport.session());
 
 >>>>>>> fb01e817860ac000ccd391ba093df6a672582ea5
 app.use('/', indexRoute)
-app.use('/', authRoute)
-// app.use('/', accountRoute)
+// app.use('/', authRoute)
+app.use('/', accountRoute)
 // app.use('/', transactionRoute)
 
 
