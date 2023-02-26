@@ -30,6 +30,5 @@ exports.transaction_create_post = (req, res) => {
             res.send('احسنت')
         })
 
-    Account.
-        findOne({ accountNumber: req.params.accountNumber })
+    Account.findOne({ accountNumber: req.params.accountNumber })
 }
