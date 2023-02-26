@@ -12,116 +12,116 @@
     <%- body %>
 
     <script>
-            // SET of arry
-const num =[1,2,3,4,5,6,7,8,9];
-const slett = ["a", "b", "c", "d", "e", "f", "g", "h", "i", 
- "j", "k", "l", "m", "n" ,"o", "p", "q", "r", "s", "t", 
-"u", "v", "w", "x", "y", "z"];
-const ulett =["A", "B", "C", "D", "E", "F", "G", "H", "I", 
-"J", "K", "L", "M", "N" ,"O", "P", "Q", "R", "S", "T", 
-"U", "V", "W", "X", "Y", "Z"];
-const symbol =["+","&", "%", "#","$","~","/","?"];
-
-
-// Variable to use
-let cou =0;
-
-
-// Functions random password
-function Ran1(){
+        // SET of arry
+    const num =[1,2,3,4,5,6,7,8,9];
+    const slett = ["a", "b", "c", "d", "e", "f", "g", "h", "i", 
+    "j", "k", "l", "m", "n" ,"o", "p", "q", "r", "s", "t", 
+    "u", "v", "w", "x", "y", "z"];
+    const ulett =["A", "B", "C", "D", "E", "F", "G", "H", "I", 
+    "J", "K", "L", "M", "N" ,"O", "P", "Q", "R", "S", "T", 
+    "U", "V", "W", "X", "Y", "Z"];
+    const symbol =["+","&", "%", "#","$","~","/","?"];
+    
+    
+    // Variable to use
+    let cou =0;
+    
+    
+    // Functions random password
+    function Ran1(){
     
     const n1=Math.trunc(Math.random()*num.length);
-const n2=Math.floor(Math.random()*ulett.length);
-const n3=Math.ceil(Math.random()*slett.length);
-const n4=Math.trunc(Math.random()*symbol.length);
-const n5=Math.ceil(Math.random()*ulett.length);
-const n6=Math.trunc(Math.random()*num.length);
-const n7=Math.floor(Math.random()*slett.length);
-const n8=Math.floor(Math.random()*symbol.length);
-const n9=Math.ceil(Math.random()*slett.length);
-const n10=Math.floor(Math.random()*num.length);
-const n11=Math.floor(Math.random()*ulett.length);
-const n12=Math.trunc(Math.random()*num.length);
-const n13=Math.floor(Math.random()*symbol.length);
-const n14=Math.ceil(Math.random()*slett.length);
-const n15=Math.trunc(Math.random()*num.length);
-const n16=Math.trunc(Math.random()*symbol.length);
-const n17=Math.floor(Math.random()*symbol.length);
-const n18=Math.ceil(Math.random()*slett.length);
-const n19=Math.trunc(Math.random()*num.length);
-const n20=Math.trunc(Math.random()*symbol.length);
-
-const n1p=num[n1];
-const n2p=ulett[n2];
-const n3p=slett[n3];
-const n4p=symbol[n4];
-const n5p=ulett[n5];
-const n6p=num[n6];
-const n7p=slett[n7];
-const n8p=symbol[n8];
-const n9p=slett[n9];
-const n10p=ulett[n10];
-const n11p=ulett[n11];
-const n12p=num[n12];
-const n13p=symbol[n13];
-const n14p=slett[n14];
-const n15p=num[n15];
-const n16p=symbol[n16];
-const n17p=symbol[n17];
-const n18p=slett[n18];
-const n19p=num[n19];
-const n20p=symbol[n20];
-
-const Np=[n1p,n2p,n3p,n4p,n5p,n6p,n7p,n8p,n9p,n10p,n11p,n12p,n13p,n14p,n15p,n16p,n17p,n18p,n19p,n20p];
-const raNp1 = Math.floor(Math.random()*Np.length)
-const raNp2 = Math.floor(Math.random()*Np.length)
-const raNp3 = Math.floor(Math.random()*Np.length)
-const raNp4 = Math.trunc(Math.random()*Np.length)
-const raNp5 = Math.floor(Math.random()*Np.length)
-const raNp6 = Math.floor(Math.random()*Np.length)
-const raNp7 = Math.floor(Math.random()*Np.length)
-const raNp8 = Math.floor(Math.random()*Np.length)
-const raNp9 = Math.ceil(Math.random()*Np.length)
-const raNp10 = Math.trunc(Math.random()*Np.length)
-const raNp11 = Math.floor(Math.random()*Np.length)
-const raNp12 = Math.trunc(Math.random()*Np.length)
-const raNp13 = Math.floor(Math.random()*Np.length)
-const raNp14 = Math.floor(Math.random()*Np.length)
-const raNp15 = Math.floor(Math.random()*Np.length)
-const raNp16 = Math.floor(Math.random()*Np.length)
-const raNp17 = Math.floor(Math.random()*Np.length)
-const raNp18 = Math.floor(Math.random()*Np.length)
-const raNp19 = Math.floor(Math.random()*Np.length)
-const raNp20 = Math.floor(Math.random()*Np.length)
-
-const fNp1 =Np[raNp1];
-const fNp2 =Np[raNp2];
-const fNp3 =Np[raNp3];
-const fNp4 =Np[raNp4];
-const fNp5 =Np[raNp5];
-const fNp6 =Np[raNp6];
-const fNp7 =Np[raNp7];
-const fNp8 =Np[raNp8];
-const fNp9 =Np[raNp9];
-const fNp10 =Np[raNp10];
-const fNp11 =Np[raNp11];
-const fNp12 =Np[raNp12];
-const fNp13 =Np[raNp13];
-const fNp14 =Np[raNp14];
-const fNp15 =Np[raNp15];
-const fNp16 =Np[raNp16];
-const fNp17 =Np[raNp17];
-const fNp18 =Np[raNp18];
-const fNp19 =Np[raNp19];
-const fNp20 =Np[raNp20];
-
-const lfNp =[fNp1, fNp2, fNp3, fNp4, fNp5, fNp6, fNp7, fNp8, fNp9, 
+    const n2=Math.floor(Math.random()*ulett.length);
+    const n3=Math.ceil(Math.random()*slett.length);
+    const n4=Math.trunc(Math.random()*symbol.length);
+    const n5=Math.ceil(Math.random()*ulett.length);
+    const n6=Math.trunc(Math.random()*num.length);
+    const n7=Math.floor(Math.random()*slett.length);
+    const n8=Math.floor(Math.random()*symbol.length);
+    const n9=Math.ceil(Math.random()*slett.length);
+    const n10=Math.floor(Math.random()*num.length);
+    const n11=Math.floor(Math.random()*ulett.length);
+    const n12=Math.trunc(Math.random()*num.length);
+    const n13=Math.floor(Math.random()*symbol.length);
+    const n14=Math.ceil(Math.random()*slett.length);
+    const n15=Math.trunc(Math.random()*num.length);
+    const n16=Math.trunc(Math.random()*symbol.length);
+    const n17=Math.floor(Math.random()*symbol.length);
+    const n18=Math.ceil(Math.random()*slett.length);
+    const n19=Math.trunc(Math.random()*num.length);
+    const n20=Math.trunc(Math.random()*symbol.length);
+    
+    const n1p=num[n1];
+    const n2p=ulett[n2];
+    const n3p=slett[n3];
+    const n4p=symbol[n4];
+    const n5p=ulett[n5];
+    const n6p=num[n6];
+    const n7p=slett[n7];
+    const n8p=symbol[n8];
+    const n9p=slett[n9];
+    const n10p=ulett[n10];
+    const n11p=ulett[n11];
+    const n12p=num[n12];
+    const n13p=symbol[n13];
+    const n14p=slett[n14];
+    const n15p=num[n15];
+    const n16p=symbol[n16];
+    const n17p=symbol[n17];
+    const n18p=slett[n18];
+    const n19p=num[n19];
+    const n20p=symbol[n20];
+    
+    const Np=[n1p,n2p,n3p,n4p,n5p,n6p,n7p,n8p,n9p,n10p,n11p,n12p,n13p,n14p,n15p,n16p,n17p,n18p,n19p,n20p];
+    const raNp1 = Math.floor(Math.random()*Np.length)
+    const raNp2 = Math.floor(Math.random()*Np.length)
+    const raNp3 = Math.floor(Math.random()*Np.length)
+    const raNp4 = Math.trunc(Math.random()*Np.length)
+    const raNp5 = Math.floor(Math.random()*Np.length)
+    const raNp6 = Math.floor(Math.random()*Np.length)
+    const raNp7 = Math.floor(Math.random()*Np.length)
+    const raNp8 = Math.floor(Math.random()*Np.length)
+    const raNp9 = Math.ceil(Math.random()*Np.length)
+    const raNp10 = Math.trunc(Math.random()*Np.length)
+    const raNp11 = Math.floor(Math.random()*Np.length)
+    const raNp12 = Math.trunc(Math.random()*Np.length)
+    const raNp13 = Math.floor(Math.random()*Np.length)
+    const raNp14 = Math.floor(Math.random()*Np.length)
+    const raNp15 = Math.floor(Math.random()*Np.length)
+    const raNp16 = Math.floor(Math.random()*Np.length)
+    const raNp17 = Math.floor(Math.random()*Np.length)
+    const raNp18 = Math.floor(Math.random()*Np.length)
+    const raNp19 = Math.floor(Math.random()*Np.length)
+    const raNp20 = Math.floor(Math.random()*Np.length)
+    
+    const fNp1 =Np[raNp1];
+    const fNp2 =Np[raNp2];
+    const fNp3 =Np[raNp3];
+    const fNp4 =Np[raNp4];
+    const fNp5 =Np[raNp5];
+    const fNp6 =Np[raNp6];
+    const fNp7 =Np[raNp7];
+    const fNp8 =Np[raNp8];
+    const fNp9 =Np[raNp9];
+    const fNp10 =Np[raNp10];
+    const fNp11 =Np[raNp11];
+    const fNp12 =Np[raNp12];
+    const fNp13 =Np[raNp13];
+    const fNp14 =Np[raNp14];
+    const fNp15 =Np[raNp15];
+    const fNp16 =Np[raNp16];
+    const fNp17 =Np[raNp17];
+    const fNp18 =Np[raNp18];
+    const fNp19 =Np[raNp19];
+    const fNp20 =Np[raNp20];
+    
+    const lfNp =[fNp1, fNp2, fNp3, fNp4, fNp5, fNp6, fNp7, fNp8, fNp9, 
     fNp10, fNp11, fNp12, fNp13, fNp14, fNp15, fNp16, fNp17, fNp18, fNp19, fNp20]
-
-
+    
+    
     for(let i=0;i<lfNp.length;i++){
     if(lfNp[i]===undefined){
-        lfNp[i] = "!"
+    lfNp[i] = "!"
     }
     }
     if(lfNp.length >= 20){
@@ -130,11 +130,14 @@ const lfNp =[fNp1, fNp2, fNp3, fNp4, fNp5, fNp6, fNp7, fNp8, fNp9,
     console.log(lfNp)
     console.log(lfNp.length)}
     else{
-        return "error";
-}}
 
-
-function ran2 (){
+    return "error";
+    
+    }
+    }
+    
+    
+    function ran2 (){
     const n1=Math.trunc(Math.random()*ulett.length);
     const n2=Math.floor(Math.random()*ulett.length);
     const n3=Math.ceil(Math.random()*ulett.length);
@@ -147,7 +150,7 @@ function ran2 (){
     const n10=Math.floor(Math.random()*num.length);
     const n11=Math.floor(Math.random()*num.length);
     const n12=Math.trunc(Math.random()*num.length);
-
+    
     const n1p=ulett[n1];
     const n2p=ulett[n2];
     const n3p=ulett[n3];
@@ -160,22 +163,28 @@ function ran2 (){
     const n10p=num[n10];
     const n11p=num[n11];
     const n12p=num[n12];
-
+    
     const Np=[n1p,n2p,n3p,n4p,n5p,n6p,n7p,n8p,n9p,n10p,n11p,n12p]
 
-    let xcv =document.getElementById("anumber");
-    xcv.value = `${Np.join("")}`
+    
+    let xc =document.getElementById("anumber");
+    xc.value = `${Np.join("")}`
     console.log(Np)
-    console.log(Np.length)}
+    console.log(Np.length)
+    
+    
+    }
+    
+    
+    
+    
+    document.getElementById("get").addEventListener("click", Ran1);
+    document.getElementById("get2").addEventListener("click", ran2);
+    
+    
+</script>
 
-
-
-
-document.getElementById("get").addEventListener("click", Ran1);
-
-
-
-    </script>
 </body>
+
 
 </html>
