@@ -17,7 +17,7 @@ const transactionRoute = require('./routes/transactions')
 
 app.use('/', indexRoute)
 // app.use('/', authRoute)
-// app.use('/', accountRoute)
+app.use('/', accountRoute)
 // app.use('/', transactionRoute)
 
 

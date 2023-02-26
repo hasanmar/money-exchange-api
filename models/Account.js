@@ -6,10 +6,10 @@ const AccountSchema = new mongoose.Schema({
     currency: String,
     balance: Number,
     transactions: [String],
-    emailAddress: [{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
-    }]
+    }
 }
 ,
 {
@@ -18,7 +18,7 @@ const AccountSchema = new mongoose.Schema({
 
 )
 
-const Account = mongoose.model("Account", articleSchema)
+const Account = mongoose.model("Account", AccountSchema)
 
 module.exports = Account
 
