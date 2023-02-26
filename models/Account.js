@@ -2,23 +2,23 @@ const mongoose = require('mongoose');
 
 const AccountSchema = new mongoose.Schema({
     accountName: String,
-    accountNumber : String,
+    accountNumber: String,
     currency: String,
     balance: Number,
     transactions: [String],
-    emailAddress: [{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
-    }]
+    }
 }
-,
-{
-    timestamps: true //means createAt and updateAt
-}
+    ,
+    {
+        timestamps: true //means createAt and updateAt
+    }
 
 )
 
-const Account = mongoose.model("Account", articleSchema)
+const Account = mongoose.model("Account", AccountSchema)
 
 module.exports = Account
 

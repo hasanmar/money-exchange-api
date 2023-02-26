@@ -2,9 +2,16 @@ const Transaction = require('../models/Transcation')
 const Account = require('../models/Account')
 
 exports.transaction_create_get = (req, res) => {
-    Account.find()
+    Account
+        .find({
+            // user: {
+            //     "_id": req.user.id
+            // }
+        })
+        // .populate('user')
         .then((account) => {
-            res.render('transaction/:account/new', { account })
+            console.log(account.user);
+            res.render('transaction/new', { account })
         })
         .catch((err) => {
             console.log(err);
@@ -14,6 +21,7 @@ exports.transaction_create_get = (req, res) => {
 
 exports.transaction_create_post = (req, res) => {
     console.log(req.body)
+
     let transaction = new Transaction(req.body)
     transaction.save()
         .then(() => {
@@ -23,4 +31,7 @@ exports.transaction_create_post = (req, res) => {
             console.log(err);
             res.send('احسنت')
         })
+
+    Account.
+        findOne({ accountNumber: req.params.accountNumber })
 }
