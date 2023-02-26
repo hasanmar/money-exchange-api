@@ -8,21 +8,15 @@ const AccountSchema = new mongoose.Schema({
     transactions: [String],
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
+        ref: "users"
     }
-}
-,
-{
-    timestamps: true //means createAt and updateAt
 }
     ,
     {
         timestamps: true //means createAt and updateAt
     }
-
 )
 
 const Account = mongoose.model("Account", AccountSchema)
 
 module.exports = Account
-
