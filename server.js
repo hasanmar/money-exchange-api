@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const session = require('express-session');
+const passport = require('./lib/passportConfig');
 
 const port = 4000
 
@@ -14,11 +16,27 @@ const authRoute = require('./routes/auth')
 const accountRoute = require('./routes/accounts')
 const transactionRoute = require('./routes/transactions')
 
+app.use(session({
+    secret: 'security',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {maxAge: 604800}
+}))
 
+<<<<<<< HEAD
+=======
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
+>>>>>>> fb01e817860ac000ccd391ba093df6a672582ea5
 app.use('/', indexRoute)
 app.use('/', authRoute)
 // app.use('/', accountRoute)
 // app.use('/', transactionRoute)
+
 
 
 
