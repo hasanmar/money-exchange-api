@@ -23,6 +23,7 @@ exports.auth_signup_post = (req, res) => {
     user.save()
         .then(() => {
             res.redirect('/auth/signin')
+            console.log(req.user);
         })
         .catch(err => {
             console.log(err)

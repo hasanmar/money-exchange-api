@@ -11,6 +11,10 @@ const AccountSchema = new mongoose.Schema({
         ref: "User"
     }
 }
+,
+{
+    timestamps: true //means createAt and updateAt
+}
     ,
     {
         timestamps: true //means createAt and updateAt

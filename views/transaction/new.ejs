@@ -1,8 +1,8 @@
-<h1>New transaction</h1>
+<h1>All accounts</h1>
 
 <% account.forEach((e,k)=>{ %>
     <h1><%= k + 1 %></h1>
-    <%= e.accountName %>
+    <a href='#'><%= e.accountName %></a>
     <%= e.accountNumber %>
     <%= e.currency %>
     <%= e.balance %>

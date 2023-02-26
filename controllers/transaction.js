@@ -21,7 +21,8 @@ exports.transaction_create_get = (req, res) => {
 
 exports.transaction_create_post = (req, res) => {
     console.log(req.body)
-
+    const senderAcc = Account.findById(req.user.id)
+    // const senderAcc = Account.findById(req.user.id)
     let transaction = new Transaction(req.body)
     transaction.save()
         .then(() => {
