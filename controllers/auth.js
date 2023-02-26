@@ -46,3 +46,6 @@ exports.auth_signout_get = (req, res) => {
     res.redirect('/auth/signin');
 }
 
+exports.auth_forget_get = (req, res) => {
+    res.render('auth/forget')
+}
