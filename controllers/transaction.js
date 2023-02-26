@@ -1,5 +1,5 @@
 const Transaction = require('../models/Transcation')
-const Account = require('../models/Account')
+// const Account = require('../models/Account')
 
 exports.transaction_create_get = (req, res) => {
     Account
@@ -33,6 +33,5 @@ exports.transaction_create_post = (req, res) => {
             res.send('احسنت')
         })
 
-    Account.
-        findOne({ accountNumber: req.params.accountNumber })
+    Account.findOne({ accountNumber: req.params.accountNumber })
 }
