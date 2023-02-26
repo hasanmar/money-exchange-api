@@ -21,13 +21,14 @@ exports.auth_signup_post = (req, res) => {
     user.password = hash
 
     user.save()
-    .then(() => {
-        res.redirect('/auth/signin')
-    })
-    .catch(err => {
-        console.log(err)
-        res.send('Something went wrong, please try again later!')
-    })
+        .then(() => {
+            res.redirect('/auth/signin')
+            console.log(req.user);
+        })
+        .catch(err => {
+            console.log(err)
+            res.send('Something went wrong, please try again later!')
+        })
 }
 
 exports.auth_signin_post = passport.authenticate('local', {
@@ -38,9 +39,9 @@ exports.auth_signin_post = passport.authenticate('local', {
 
 
 exports.auth_signout_get = (req, res) => {
-    req.logout(function(err){
-        if(err){
-           return next(err);
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
         }
     });
     res.redirect('/auth/signin');

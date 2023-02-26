@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const AccountSchema = new mongoose.Schema({
     accountName: String,
-    accountNumber : String,
+    accountNumber: String,
     currency: String,
     balance: Number,
     transactions: [String],
@@ -15,6 +15,10 @@ const AccountSchema = new mongoose.Schema({
 {
     timestamps: true //means createAt and updateAt
 }
+    ,
+    {
+        timestamps: true //means createAt and updateAt
+    }
 
 )
 

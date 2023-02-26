@@ -17,18 +17,19 @@ exports.account_create_get = (req, res) => {
 
 
 exports.create_account_post = (req, res) => {
-    console.log(req.body);
+    console.log(req.session.passport.user);
     let account = new Account(req.body);
-
-    console.log(req.body);
-    account.user = req.user._id;
-
+    account.user = req.session.passport.user
+    
     account.save()
     .then(()=> {
+        console.log(account.user);
         res.redirect('/account/index')}
     )
         .catch((err) => {console.log(err);
             res.send('Something went wrong in creating the account API post');
 }); }
+
+
 
 

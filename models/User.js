@@ -9,9 +9,9 @@ const userSchema = mongoose.Schema({
     password: {type: String, required: true},
     recoveryKey: {type: String}
 },
-{
-    timestamps: true
-})
+    {
+        timestamps: true
+    })
 
 userSchema.methods.verifyPassword = function(password){
     // console.log('Verifying: ', password)
