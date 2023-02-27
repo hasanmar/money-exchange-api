@@ -1,0 +1,12 @@
+<h1>All accounts</h1>
+
+<% account.forEach((e,k)=>{ %>
+    <h1><%= k + 1 %></h1>
+    <a href='#'><%= e.accountName %></a>
+    <%= e.accountNumber %>
+    <%= e.currency %>
+    <%= e.balance %>
+    <%= e.transactions %>
+    <%= e.user %>
+    <a href="/transaction/new"></a>
+<% }) %>

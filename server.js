@@ -26,7 +26,8 @@ app.use(session({
 app.use('/', indexRoute)
 app.use('/', authRoute)
 app.use('/', accountRoute)
-// app.use('/', transactionRoute)
+app.use('/', transactionRoute)
+
 
 
 

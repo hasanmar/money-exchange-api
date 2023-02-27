@@ -7,11 +7,11 @@ const userSchema = mongoose.Schema({
     lastName: {type: String, required: true},
     emailAddress: {type: String, required: true},
     password: {type: String, required: true},
-    recoveryKey: {type: String, required: true}
+    recoveryKey: {type: String}
 },
-{
-    timestamps: true
-})
+    {
+        timestamps: true
+    })
 
 userSchema.methods.verifyPassword = function(password){
     // console.log('Verifying: ', password)
