@@ -139,58 +139,70 @@
     console.log(lfNp.length)}
     else{
 
-    return "error";
-    
-    }
-    }
-    
-    
-    function ran2 (){
-    const n1=Math.trunc(Math.random()*ulett.length);
-    const n2=Math.floor(Math.random()*ulett.length);
-    const n3=Math.ceil(Math.random()*ulett.length);
-    const n4=Math.trunc(Math.random()*ulett.length);
+
+
+document.getElementById("get").addEventListener("click", Ran1);
+
+
+
+    </script>
+    <script>
+
+function ran2 (){
+    const n1=Math.trunc(Math.random()*num.length);
+    const n2=Math.floor(Math.random()*num.length);
+    const n3=Math.ceil(Math.random()*num.length);
+    const n4=Math.trunc(Math.random()*num.length);
+
     const n5=Math.ceil(Math.random()*ulett.length);
-    const n6='CE';
     const n7=Math.floor(Math.random()*num.length);
     const n8=Math.floor(Math.random()*num.length);
     const n9=Math.ceil(Math.random()*num.length);
     const n10=Math.floor(Math.random()*num.length);
     const n11=Math.floor(Math.random()*num.length);
     const n12=Math.trunc(Math.random()*num.length);
+
+
+    const n1p=num[n1];
+    const n2p=num[n2];
+    const n3p=num[n3];
+    const n4p=num[n4];
+    const n5p=num[n5];
     
-    const n1p=ulett[n1];
-    const n2p=ulett[n2];
-    const n3p=ulett[n3];
-    const n4p=ulett[n4];
-    const n5p=ulett[n5];
-    const n6p=n6;
     const n7p=num[n7];
     const n8p=num[n8];
     const n9p=num[n9];
     const n10p=num[n10];
     const n11p=num[n11];
     const n12p=num[n12];
-    
-    const Np=[n1p,n2p,n3p,n4p,n5p,n6p,n7p,n8p,n9p,n10p,n11p,n12p]
 
-    
-    let xc =document.getElementById("anumber");
-    xc.value = `${Np.join("")}`
-    console.log(Np)
-    console.log(Np.length)
-    
-    
+
+    const Np=[n1p,n2p,n3p,n4p,n5p]
+    const Np2=[n7p,n8p,n9p,n10p,n11p,n12p]
+    const check_NP = []
+
+    for(let i = 0; i<Np.length; i++){
+        if(Np[i]=== undefined){
+            Np[i]= 7
+        }
+        
+        if(Np2[i] === undefined){
+            Np2[i]= 0
+        }
+
+    check_NP.push(Np[i])    
+    check_NP.push(Np2[i])
     }
-    
-    
-    
-    
-    document.getElementById("get").addEventListener("click", Ran1);
+
+    console.log(check_NP.sort().reverse())
+    let xcv =document.getElementById("anumber");
+    xcv.value = `${Np.join("") + Np2.join("")}`
+    console.log(check_NP.length)
+   
+}
+
     document.getElementById("get2").addEventListener("click", ran2);
-    
-    
-</script>
+    </script>
 
 </body>
 
