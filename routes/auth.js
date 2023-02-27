@@ -20,6 +20,8 @@ router.get('/auth/forget', authCntrl.auth_forget_get)
 router.post('/auth/forget', authCntrl.auth_forget_post)
 
 router.get('/auth/updatepassword', authCntrl.auth_update_get)
+//updatepassword
+router.post('/auth/updatepassword', authCntrl.auth_forget_post)
 
 
 module.exports = router

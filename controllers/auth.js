@@ -67,3 +67,6 @@ exports.auth_update_get = (req, res) => {
 exports.auth_forget_post = (req, res) => {
     res.redirect('/auth/updatepassword')
 }
+//updatepass
+
+

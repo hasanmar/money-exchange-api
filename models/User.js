@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
     emailAddress: {type: String, required: true},
     password: {type: String, required: true},
     recoveryKey: {type: String}
+
 },
     {
         timestamps: true
