@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+// const isLoggedIn = require('../lib/isLoggedIn')
+
 
 const authCntrl = require('../controllers/auth')
 router.use(express.urlencoded({ extended: true }))

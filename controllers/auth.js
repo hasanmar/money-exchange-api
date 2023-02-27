@@ -34,6 +34,8 @@ exports.auth_signup_post = (req, res) => {
 exports.auth_signin_post = passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/auth/signin'
+},(res,req)=>{
+    console.log('success');
 })
 
 
@@ -58,3 +60,9 @@ exports.auth_update_get = (req, res) => {
 exports.auth_forget_post = (req, res) => {
     res.redirect('/auth/updatepassword')
 }
+
+
+// exports.auth_forget_post = passport.authenticate('local', {
+//     successRedirect: '/auth/updatepassword',
+//     failureRedirect: '/auth/forget'
+// })
