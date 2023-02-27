@@ -38,12 +38,29 @@ exports.transaction_add_update = (req, res) => {
     })
 
     Account.findOne({
+        accountNumber: receiverAccNum
+    }).then(account => {
+        receiverAccount = account
+        receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyToSend)
+        transaction.currency = receiverAccount.currency
+        receiverAccount.save().then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.log(err);
+        })
+    }).catch(err => { console.log(err) })
+
+    Account.findOne({
         accountNumber: senderAccNum
     })
         .then(account => {
             senderAccount = account
             if (senderAccount.balance >= moneyToSend) {
                 senderAccount.balance = senderAccount.balance - moneyToSend
+                transaction.currency = senderAccount.currency + '_' + transaction.currency
+                senderAccount.transactions.push(` sent ${senderAccount.currency} ${moneyToSend} to ${receiverAccount.accountName}`)
+                receiverAccount.transactions.push(` received ${senderAccount.currency} ${moneyToSend} from ${senderAccount.accountName}`)
+
             } else {
                 res.status(400).send({ message: "insufficient balance. احسنت" });
             }
@@ -55,17 +72,7 @@ exports.transaction_add_update = (req, res) => {
                 })
         }).catch(err => { console.log(err) })
 
-    Account.findOne({
-        accountNumber: receiverAccNum
-    }).then(account => {
-        receiverAccount = account
-        receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyToSend)
-        receiverAccount.save().then(data => {
-            console.log(data);
-        }).catch(err => {
-            console.log(err);
-        })
-    }).catch(err => { console.log(err) })
+
 
 
     // var senderAcc = Account.findOne({ accountNumber: req.query.senderAccount })

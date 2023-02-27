@@ -11,4 +11,5 @@ const ratesSchema = mongoose.Schema({
 
 
 const Rates = mongoose.model('Rates', ratesSchema)
+
 module.exports = Rates
