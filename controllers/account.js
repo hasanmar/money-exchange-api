@@ -15,7 +15,6 @@ exports.account_create_get = (req, res) => {
     
 }
 
-
 exports.create_account_post = (req, res) => {
     console.log(req.session.passport.user);
     let account = new Account(req.body);
@@ -30,6 +29,21 @@ exports.create_account_post = (req, res) => {
             res.send('Something went wrong in creating the account API post');
 }); }
 
+
+
+
+// account index
+exports.account_index_get = (req, res) => {
+    Account.find()
+   .then(accounts => {
+        res.render('account/index', {accounts})
+    })
+   .catch(err => {
+        console.log(err)
+        res.send('Something went wrong in creating the account API get');
+    })
+    
+} 
 
 
 
