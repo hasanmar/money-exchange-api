@@ -29,8 +29,8 @@ exports.transaction_add_update = (req, res) => {
     const senderAccNum = req.query.senderAccount
     const receiverAccNum = req.body.receiverAcc
 
-    let senderAcc;
-    let receiverAcc;
+    let senderAccount;
+    let receiverAccount;
 
     const transaction = new Transaction({
         senderAcc: senderAccNum,
@@ -41,29 +41,29 @@ exports.transaction_add_update = (req, res) => {
         accountNumber: senderAccNum
     })
         .then(account => {
-            senderAcc = account
-            if (senderAcc.balance >= moneyToSend) {
-                senderAcc.balance = senderAcc.balance - moneyToSend
+            senderAccount = account
+            if (senderAccount.balance >= moneyToSend) {
+                senderAccount.balance = senderAccount.balance - moneyToSend
             } else {
-                response.status(400).send({ message: "insufficient balance. احسنت" });
+                res.status(400).send({ message: "insufficient balance. احسنت" });
             }
-            senderAcc.save()
+            senderAccount.save()
                 .then(data => {
-                    res.status(200).send(data)
+                    console.log(data);
                 }).catch(err => {
-                    res.status(500).send({ message: err.message || "internal error" })
+                    console.log(err);
                 })
         }).catch(err => { console.log(err) })
 
     Account.findOne({
         accountNumber: receiverAccNum
     }).then(account => {
-        receiverAcc = account
-        receiverAcc.balance = parseFloat(receiverAcc.balance) + parseFloat(moneyToSend)
-        receiverAcc.save().then(data => {
-            res.status(200).send(data)
+        receiverAccount = account
+        receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyToSend)
+        receiverAccount.save().then(data => {
+            console.log(data);
         }).catch(err => {
-            res.status(500).send({ message: err.message || "internal error" })
+            console.log(err);
         })
     }).catch(err => { console.log(err) })
 

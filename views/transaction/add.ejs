@@ -1,5 +1,5 @@
 <h1>send money.</h1>
-<form action="/transaction/add?senderAccount=<%= account.accountNumber %>&_method=PATCH" method="POST">
+<form action="/transaction/add?senderAccount=<%= account.accountNumber %>" method="POST">
     <div class="form-row">
         <label for=accountName>From account: </label> <p> <%= account.accountName %></p>
         <label for=accountName>Account balance: </label> <p> <%= account.currency + ' ' +account.balance %></p>
