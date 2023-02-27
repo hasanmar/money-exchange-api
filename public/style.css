@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+#banner{
+    margin: 0;
+    width: 100%;
+    height: 120px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(231, 197, 0);
+}
+
+
+#logo{
+    background-image: url('./pic/logoo.png');
+    background-size: contain;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+
+}
