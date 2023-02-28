@@ -2,6 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const session = require('express-session');
 const passport = require('./lib/passportConfig');
+const methodOverride = require('method-override')
+
 
 const port = 4000
 
@@ -20,9 +22,9 @@ app.use(session({
     secret: 'security',
     resave: false,
     saveUninitialized: true,
-    cookie: {maxAge: 604800}
+    cookie: { maxAge: 604800 }
 }))
-
+app.use(methodOverride('_method'))
 app.use(passport.initialize());
 app.use(passport.session());
 

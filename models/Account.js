@@ -11,13 +11,12 @@ const AccountSchema = new mongoose.Schema({
         ref: "User"
     }
 }
-,
-{
-    timestamps: true //means createAt and updateAt
-}
+    ,
+    {
+        timestamps: true //means createAt and updateAt
+    }
 )
 
 const Account = mongoose.model("Account", AccountSchema)
 
 module.exports = Account
-
