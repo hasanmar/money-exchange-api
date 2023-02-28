@@ -87,8 +87,14 @@ exports.auth_forget_post = (req, res) => {
     .catch((err) => {
       console.log(err);
     });
-  // let isValidKey = false;
 };
+
+
+
+
+
+
+
 
 // user
 // .then(() => {
@@ -100,3 +106,8 @@ exports.auth_forget_post = (req, res) => {
 //   res.send("Something went wrong, please try again later!");
 // });
 // console.log('isValidKey');
+
+
+
+
+
