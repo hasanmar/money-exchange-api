@@ -1,15 +1,22 @@
 body{
     margin: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(11, 0, 109);
+    font-family: 'Raleway', sans-serif;
 }
 
 #banner{
     margin: 0;
     width: 100%;
-    height: 120px;
-    border: 2px solid rgb(0, 0, 0);
+    height: 100px;
     background-color: rgb(231, 197, 0);
 }
+
+#banner h1{
+display: inline-block;
+}
+
+
+
 
 
 #logo{
@@ -20,3 +27,14 @@ body{
     display: inline-block;
 
 }
+
+
+#Main-body-layout{
+    width: 96%;
+    height: 600px;
+    background-color: aliceblue;
+    border-radius: 40px;
+    margin-left: 25px;
+    margin-bottom: 50px;
+}
+
