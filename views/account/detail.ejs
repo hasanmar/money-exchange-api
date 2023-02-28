@@ -4,6 +4,9 @@
         <h3><%= account.accountNumber %></h3>
         <h3><%= account.currency %></h3>
         <h3><%= account.balance%></h3>
+        <% account.transactions.forEach(e=>{ %>
+            <h2> <%= e %></h2>
+        <% }) %>
     </div>
 
 
