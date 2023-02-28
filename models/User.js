@@ -18,10 +18,10 @@ userSchema.methods.verifyPassword = function(password){
     return bcrypt.compareSync(password, this.password)
 }
 
-// userSchema.methods.verifyRecoveryKey = function(recoveryKey){
-//     console.log('احسنت');
-//     return bcrypt.compareSync(recoveryKey, this.recoveryKey)
-// }
+userSchema.methods.verifyRecoveryKey = function(recoveryKey){
+    console.log('احسنت');
+    return bcrypt.compareSync(recoveryKey, this.recoveryKey)
+}
 
 
 
