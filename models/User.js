@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
     lastName: {type: String, required: true},
     emailAddress: {type: String, required: true},
     password: {type: String, required: true},
-    recoveryKey: {type: String, required: true}
+    recoveryKey: {type: String}
 },
     {
         timestamps: true
@@ -18,10 +18,10 @@ userSchema.methods.verifyPassword = function(password){
     return bcrypt.compareSync(password, this.password)
 }
 
-// userSchema.methods.verifyRecoveryKey = function(recoveryKey){
-//     console.log('احسنت');
-//     return bcrypt.compareSync(recoveryKey, this.recoveryKey)
-// }
+userSchema.methods.verifyRecoveryKey = function(recoveryKey){
+    console.log('احسنت');
+    return bcrypt.compareSync(recoveryKey, this.recoveryKey)
+}
 
 
 
