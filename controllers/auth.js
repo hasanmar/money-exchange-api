@@ -71,23 +71,38 @@ exports.auth_update_get = (req, res) => {
 
 exports.auth_forget_post = (req, res) => {
   let key = req.body.recoveryKey;
+  let email = req.body.email
+  let hash = bcrypt.hashSync(req.body.password, 10);
+  var checkUser  
 
-  let checkUser = User.findOne({ emailAddress: req.body.email })
+  User.findOne({ emailAddress: email  })
     .then((user) => {
+      checkUser = user;
+      
       let isValidKey = bcrypt.compareSync(key, user.recoveryKey) ? true : false;
       console.log(isValidKey);
       if (!isValidKey) {
         console.log("failed to compare");
         res.redirect("/auth/forget");
       } else {
-        console.log("success");
-        res.redirect("/auth/updatepassword");
+        checkUser.password = hash
+        checkUser
+        .save()
+        .then( res.redirect("/auth/signin"))
+        .catch(err=>{
+          console.log(err);
+        })
+        
       }
     })
     .catch((err) => {
       console.log(err);
     });
+    // let user = new User(req.body);
+
+    
 };
+
 
 
 
