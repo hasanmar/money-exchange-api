@@ -65,8 +65,41 @@ exports.auth_update_get = (req, res) => {
 }
 
 exports.auth_forget_post = (req, res) => {
-    res.redirect('/auth/updatepassword')
+    res.redirect('/auth/updatepassword?email=' + req.body.email)
 }
 //updatepass
 
+// exports.auth_update_post =(req, res) => {
+//     router.post()
+// }
+
+
+
+// exports.auth_changepassword_get = (req, res) =>{
+    
+//     res.render('auth/updatepassword')
+    
+    
+// }
+
+// exports.auth_changepassword_post = (req, res) =>{
+
+//     console.log(req.params);
+//     console.log(req.query);
+//     console.log(req.body);
+//     let newPassword = req.body.password
+
+//     let hash = bcrypt.hashSync(newPassword, 10)
+    
+    
+//     User.findOne({emailAddress : req.params.email})
+//     .then(() => {
+//         console.log('heloo')
+//                 res.redirect("/")
+//             })
+//     .catch(() => {
+//                 console.log('err')
+//             })
+           
+//         }
 
