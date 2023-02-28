@@ -77,7 +77,10 @@ exports.auth_forget_post = (req, res) => {
 
   User.findOne({ emailAddress: email  })
     .then((user) => {
-      checkUser = user;
+      console.log(user)
+      if(user)
+{
+        checkUser = user;
       
       let isValidKey = bcrypt.compareSync(key, user.recoveryKey) ? true : false;
       console.log(isValidKey);
@@ -94,6 +97,7 @@ exports.auth_forget_post = (req, res) => {
         })
         
       }
+}
     })
     .catch((err) => {
       console.log(err);
