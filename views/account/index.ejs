@@ -1,0 +1,12 @@
+<% account.forEach(function(account) {%>
+    <div>
+        <h2><%= account.accountName %></h2>
+        <h3><%= account.accountNumber %></h3>
+        <h3><%= account.currency %></h3>
+        <h3><%= account.balance%></h3>
+        <a href="/account/detail?id=<%= account._id %>">Show Details</a>
+        <a href="/account/delete?id=<%= account._id %>">delete</a>
+    </div>
+
+
+<%}); %>

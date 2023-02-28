@@ -15,10 +15,16 @@ const userSchema = mongoose.Schema({
     })
 
 userSchema.methods.verifyPassword = function(password){
-    // console.log('Verifying: ', password)
-    // console.log(this.password)
+    console.log('احسنت');
     return bcrypt.compareSync(password, this.password)
 }
+
+userSchema.methods.verifyRecoveryKey = function(recoveryKey){
+    console.log('احسنت');
+    return bcrypt.compareSync(recoveryKey, this.recoveryKey)
+}
+
+
 
 const User = mongoose.model('User', userSchema)
 
