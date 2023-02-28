@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const session = require('express-session');
 const passport = require('./lib/passportConfig');
 const methodOverride = require('method-override')
+var patch = require('path')
 
 
 const port = 4000
@@ -38,7 +39,7 @@ app.use('/', transactionRoute)
 
 
 
-
+app.use(express.static(patch.join(__dirname, 'public')));
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);

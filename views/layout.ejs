@@ -6,15 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money transfer</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
+    <div id="banner">
+        <div id="logo"></div>
+        <h1>welcome</h1>
+    </div>
+
     <div>
         <nav>
             <a href="/account/add">Account Add</a>
             <a href="/auth/signin">Sign in</a>
             <a href="/auth/signup">Sign up</a>
             <a href="/transaction/new">transaction</a>
+            <a href="/account/index">ACC.index</a>
         </nav>
         </div>
     <%- body %>
@@ -137,8 +144,9 @@
     xc.value = `${lfNp.join("")}`
     console.log(lfNp)
     console.log(lfNp.length)}
+    else{
+    }}
 
-    }
 
 document.getElementById("get").addEventListener("click", Ran1);
 
@@ -152,7 +160,6 @@ function ran2 (){
     const n2=Math.floor(Math.random()*num.length);
     const n3=Math.ceil(Math.random()*num.length);
     const n4=Math.trunc(Math.random()*num.length);
-
     const n5=Math.ceil(Math.random()*ulett.length);
     const n7=Math.floor(Math.random()*num.length);
     const n8=Math.floor(Math.random()*num.length);
