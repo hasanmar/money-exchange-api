@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/signin.css">
     <link rel="stylesheet" href="/acc_index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,11 +24,21 @@
     <div id="banner">
         <div id="logo"></div>
         <h1>welcome</h1>
-        
     </div>
-    
+
+    <div>
+        <nav>
+            <a href="/account/add">Account Add</a>
+            <a href="/transaction/new">transaction</a>
+            <a href="/account/index">ACC.index</a>
+        </nav>
+    </div>
+    <div id = 'test'>
+        <%- locals.currentUser ? `<div><p style="text-align: right;"> signed in as ${locals.currentUser.firstName} ${locals.currentUser.lastName} </p> </div> <a href="/auth/signout">Sign out</a>` : `<div class="nav-pic"><div id="siin"></div><br><a href="/auth/signin">Sign in</a></div><div class="nav-pic"><div id="siup"></div><br><a href="/auth/signup">Sign up</a></div>` %>
+    </div>
+
     <%- body %>
-        
+
 
 
 
@@ -155,7 +165,7 @@
 
             }
 
-           addEventListener("load", Ran1);
+            addEventListener("load", Ran1);
 
 
 
