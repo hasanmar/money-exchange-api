@@ -16,17 +16,8 @@
             <a href="/account/index">ACC.index</a>
         </div>
         
-        <%- locals.currentUser ? `<div id = 'user'><p> ${locals.currentUser.firstName} ${locals.currentUser.lastName} </p></div> <div class="nav-pic"></div><div id="sino"><a href="/auth/signout">Sign out</a></div></div>` : `<div class="nav-pic"><div id="siin"></div><br><a href="/auth/signin">Sign in</a></div><div class="nav-pic"><div id="siup"></div><br><a href="/auth/signup">Sign up</a></div>` %>
+        <%- locals.currentUser ? `<div id ="user"><p> ${locals.currentUser.firstName} ${locals.currentUser.lastName} </p></div> <div class="nav-pic"></div><div id="sino"><a href="/auth/signout">Sign out</a></div></div>` : `<div class="nav-pic"><div id="siin"></div><br><a href="/auth/signin">Sign in</a></div><div class="nav-pic"><div id="siup"></div><br><a href="/auth/signup">Sign up</a></div>` %>
         
-        <!-- <div class="nav-pic">
-            <div id="siin"></div><br>
-            <a href="/auth/signin">Sign in</a>
-        </div>
-
-        <div class="nav-pic">
-            <div id="siup"></div><br>
-            <a href="/auth/signup">Sign up</a>
-        </div> -->
         
     </nav>
 </div>
