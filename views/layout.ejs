@@ -23,10 +23,9 @@
     <div>
         <nav>
             <a href="/account/add">Account Add</a>
-            <a href="/auth/signin">Sign in</a>
-            <a href="/auth/signup">Sign up</a>
             <a href="/transaction/new">transaction</a>
             <a href="/account/index">ACC.index</a>
+            <%- locals.currentUser ? `<p> signed in as ${locals.currentUser.firstName} ${locals.currentUser.lastName} </p>` : '<a href="/auth/signin">Sign in</a> <a href="/auth/signup">Sign up</a>' %>
         </nav>
     </div>
     <%- body %>
