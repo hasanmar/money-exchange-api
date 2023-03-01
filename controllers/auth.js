@@ -19,6 +19,10 @@ exports.auth_signin_get = (req, res) => {
     res.render('auth/signin');
 }
 
+exports.auth_delete = (req, res) => {
+  res.render("auth/delete");
+}
+
 exports.auth_signup_post = (req, res) => {
   console.log("1");
   console.log(req.body.password);
@@ -47,27 +51,35 @@ exports.auth_signin_post = passport.authenticate("local", {
   failureRedirect: "/auth/signin",
 });
 
+// exports.auth_signout_get = (req, res, next) => {
+//   console.log('logged out');
+//   if (req.session.isLoggedIn) {
+//     req.session.isLoggedIn = false;
+//     res.redirect('/');
+// }else{
+//   // Not logged in
+//   res.redirect('/');
+// }};
+
+
 exports.auth_signout_get = (req, res) => {
-  req.logout(function (err) {
-    if (err) {
-      return next(err);
-    }
+  req.logout(function(err){
+      if(err){
+         return next(err);
+      }
   });
-  res.redirect("/auth/signin");
-};
+  res.redirect('/auth/signin');
+}
+
+
+
+
 
 exports.auth_forget_get = (req, res) => {
   res.render("auth/forget");
 };
 
-// exports.auth_update_get = (req, res) => {
-//   res.render("auth/updatepassword");
-// };
 
-// exports.auth_forget_post = passport.authenticate("local", {
-//     successRedirect: "/auth/updatepassword",
-//     failureRedirect: "/auth/forget"
-// });
 
 exports.auth_forget_post = (req, res) => {
   let key = req.body.recoveryKey;
@@ -104,25 +116,6 @@ exports.auth_forget_post = (req, res) => {
     });
     
 };
-
-
-
-
-
-
-
-
-
-// user
-// .then(() => {
-//   res.redirect("/auth/signin");
-//   console.log(req.user);
-// })
-// .catch((err) => {
-//   console.log(err);
-//   res.send("Something went wrong, please try again later!");
-// });
-// console.log('isValidKey');
 
 
 
