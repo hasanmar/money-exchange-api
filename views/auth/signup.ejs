@@ -1,39 +1,71 @@
+
+<div >
+    <nav class="nav">
+        <div class="nav-pic">
+            <div id="accadd"></div><br>
+        <a href="/account/add">Account Add</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="siin"></div><br>
+            <a href="/auth/signin">Sign in</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="siup"></div><br>
+            <a href="/auth/signup">Sign up</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="trans"></div><br>
+            <a href="/transaction/new">transaction</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="acind"></div><br>
+            <a href="/account/index">ACC.index</a>
+        </div>
+        
+        
+        
+        
+    </nav>
+</div>
+
+
 <div id="signup-style">
 
-
-    <div id="signup-style-info2">
-
-    </div>
-
-
     <div id="signup-style-info">
+
+        <div id="addicon"></div>
+
 <h1>Create a new account</h1>
 <form method="POST" action="/auth/signup">
     <div>
-    <label>First Name</label>
-    <input name="firstName" type="text"/>
+    <label class="signup-label">First Name</label><br>
+    <input name="firstName" type="text"class="signup-input"/>
 </div>
 
 <div class="form-group">
-    <label>Last Name</label>
-    <input name="lastName" type="text"/>
+    <label class="signup-label">Last Name</label><br>
+    <input name="lastName" type="text"class="signup-input"/>
     </div>
     
     <div class="form-group">
-    <label>Email Address</label>
-    <input name="emailAddress" type="email"/>
+    <label class="signup-label">Email Address</label><br>
+    <input name="emailAddress" type="email"class="signup-input"/>
     </div>
     
     <div class="form-group">
-        <label>Password</label>
-        <input name="password" type="password"/>
+        <label class="signup-label">Password</label><br>
+        <input name="password" type="password"class="signup-input" />
     </div>
     
     
     <div class="form-group">
-        <label>Recovery Key</label>
+        <label class="signup-label">Recovery Key</label><br>
         
-        <input name="recoveryKey" id="r-key" type="text" required onkeypress="return false;" /><input type="button" value="Get" id="get"/>
+        <input name="recoveryKey" id="r-key" type="text" required onkeypress="return false;" class="signup-input" readonly />
         
     </div>
 <br>
