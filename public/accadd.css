@@ -1,0 +1,18 @@
+#add-main{
+    width: 97%;
+    height: 300px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+#add-main label{
+    position: absolute;
+    left: 595px;
+
+}
+#add-main select{
+    width: 180px;
+    
+}

@@ -1,6 +1,67 @@
 
 
 
+
+
+
+<!-- <div >
+    <nav class="nav">
+        <div class="nav-pic">
+            <div id="accadd"></div><br>
+        <a href="/account/add">Account Add</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="siin"></div><br>
+            <a href="/auth/signin">Sign in</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="siup"></div><br>
+            <a href="/auth/signup">Sign up</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="trans"></div><br>
+            <a href="/transaction/new">transaction</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="acind"></div><br>
+            <a href="/account/index">ACC.index</a>
+        </div>
+        
+        
+        
+        
+    </nav>
+</div> -->
+
+
+<div >
+    <nav class="nav">
+        <div class="nav-pic">
+            <div id="accadd"></div><br>
+        <a href="/account/add">Account Add</a>
+        </div>
+  
+        <div class="nav-pic">
+            <div id="trans"></div><br>
+            <a href="/transaction/new">Transaction</a>
+        </div>
+  
+        <div class="nav-pic">
+            <div id="acind"></div><br>
+            <a href="/account/index">ACC.index</a>
+        </div>
+        
+        <%- locals.currentUser ? `<div id="user"><p style="text-align: right;"> ${locals.currentUser.firstName} ${locals.currentUser.lastName} </p> </div> <div class ="nav-pic"><div id="sino"></div><br><a href="/auth/signout">Sign out</a></div>` : `<div class="nav-pic"><div id="siin"></div><br><a href="/auth/signin">Sign in</a></div><div class="nav-pic"><div id="siup"></div><br><a href="/auth/signup">Sign up</a></div>` %>
+        
+     
+        
+    </nav>
+  </div>
+
 <div id="signin-main">
     <div id="signin-info">
     <div id="signin-logo"></div>

@@ -13,10 +13,15 @@
     margin-top: 30px;
 }
 
+p{
+    z-index: 1;
+    font-size: 20px;
+    color: blue;
+}
 
 .nav{
     height:80px;
-    width: 625px;
+    width: 650px;
     text-align: center;
     background-color: rgb(11, 0, 109);
     margin-left: 27%;
@@ -50,6 +55,20 @@
     background-repeat: no-repeat;
     margin-left: 16px;
 }
+
+#sino{
+    background-image: url('./pic/signout.png');
+    height: 50px;
+    width: 40px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-top: 9px;
+    margin-bottom: -9px;
+    margin-left: 25px;
+}
+
+
 
 
 #siup{
@@ -92,7 +111,7 @@
     text-decoration: none;
     color: rgb(255, 255, 255);
     margin-top: 10px;
-    padding-left: 10px;
+    padding-left: 15px;
     margin: 0;
     font-family: 'Raleway', sans-serif;
 }

@@ -3,6 +3,26 @@ body{
     background-color: rgb(11, 0, 109);
     font-family: 'Raleway', sans-serif;
 }
+#user {
+    position: absolute;
+    right: 80px;
+    background-color: rgb(11, 0, 109);
+    border-radius: 15px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+}
+#user p{
+    color: rgb(231, 197, 0);
+    margin: 0;
+    margin-top: 15px;
+    margin-right: 50px;
+}
+
+#test{
+    width: 100px;
+    height: 100px;
+}
 
 #banner{
     margin: 0;
@@ -18,6 +38,22 @@ body{
 
 #banner h1{
 display: inline-block;
+margin: 0px;
+margin-left: 3px;
+margin-top: 15px;
+position: absolute;
+color: aliceblue;
+text-shadow: 2px 2px 2px black;
+}
+
+#banner h2{
+    display: inline-block;
+    margin: 0;
+    margin-top: 50px;
+    margin-left: 5px;
+    position: absolute;
+    color: aliceblue;
+text-shadow: 2px 2px 2px black;
 }
 
 
@@ -30,6 +66,8 @@ display: inline-block;
     width: 90px;
     height: 90px;
     display: inline-block;
+    margin-left: 20px;
+    margin-top: 3px;
 
 }
 
@@ -41,6 +79,6 @@ display: inline-block;
     border-radius: 40px;
     margin-left: 25px;
     margin-bottom: 30px;
-    margin-top: 20px;
+    margin-top: 110px;
 }
 
