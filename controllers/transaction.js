@@ -43,8 +43,8 @@ exports.transaction_add_update = (req, res) => {
         senderAcc: senderAccNum,
         receiverAcc: receiverAccNum
     })
-    if (receiverAccNum === undefined || receiverAccNum === '' || isNaN(receiverAccNum) || receiverAccNum.length !== 11) return res.status(400).send(`account number '${receiverAccNum}' is not valid.`)
-    if (moneyToSend === undefined || moneyToSend === '' || isNaN(moneyToSend) || moneyToSend < 1) return res.status(400).send(`enter a number above 0 to send.`)
+    if (receiverAccNum === undefined || receiverAccNum === '' || isNaN(receiverAccNum) || receiverAccNum.length !== 11) return res.status(400).send(`account number '${receiverAccNum}' is not valid. احسنت`)
+    if (moneyToSend === undefined || moneyToSend === '' || isNaN(moneyToSend) || moneyToSend < 1) return res.status(400).send(`enter an amount above 0 to send. احسنت`)
 
     Account.findOne({
         accountNumber: receiverAccNum
@@ -61,7 +61,7 @@ exports.transaction_add_update = (req, res) => {
         .then(account => {
             console.log(account.user);
             senderAccount = account
-            if (receiverAccount === null || receiverAccount === undefined) return res.status(400).send('account does not exist.')
+            if (receiverAccount === null || receiverAccount === undefined) return res.status(400).send('account does not exist. احسنت')
             transaction.currency = senderAccount.currency + '_' + receiverAccount.currency
             console.log(transaction.currency);
             if (senderAccount.balance >= moneyToSend) {

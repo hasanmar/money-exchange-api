@@ -31,8 +31,7 @@ exports.create_account_post = (req, res) => {
         }
       });
       if (found) {
-        console.log("fund" + found);
-        res.send("nope");
+        res.send("already have an account in that currency. احسنت ");
       } else {
         account
           .save()
@@ -83,7 +82,7 @@ exports.accountdetail_delete_get = (req, res) => {
         account.deleteOne();
         res.redirect("/account/index");
       } else {
-        res.send(" cant delete account with balance");
+        res.send(" cant delete account with balance. احسنت");
       }
     })
     .catch((err) => {

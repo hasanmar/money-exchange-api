@@ -1,76 +1,79 @@
-#accdet-main{
-    
-        width: 97%;
-        height: 100%;
-        background-color: white;
-        margin: 0 auto;
-        border-radius: 30px;
-        text-align: center;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        overflow: hidden;
+#accdet-main {
+
+    width: 97%;
+    height: 100%;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 
 
-#accdet-head{
+#accdet-head {
     width: 100%;
     height: 100px;
     background-color: rgb(43, 65, 83);
 }
 
 
-#accdet-head h2{
-    
+#accdet-head h2 {
+
     color: antiquewhite;
     display: inline-block;
     margin-top: 35px;
 }
 
-#accdet-main h2{
-    
+#accdet-main h2 {
+
     display: inline-block;
     margin-bottom: 10px;
 }
 
 
-#accdet-det{
-    
+#accdet-det {
+
     border-top: 20px solid rgb(182, 3, 3);
     border-radius: 10px;
     margin-top: 20px;
-    width: 500px;
+    width: 40%;
     background-color: rgba(0, 0, 0, 0.13);
-    margin-left: 410px;
+    margin-left: 27%;
     margin-bottom: 50px;
 }
-#accdet-det h3{
+
+#accdet-det h3 {
     margin: 0;
     margin-bottom: 5px;
 }
 
 
-table{
-margin-left: 250px;
+table {
+    margin-left: 23%;
 }
 
-td{
+td {
     border: 2px solid black;
     border-radius: 5px;
-    
+
 }
-th{
+
+th {
     color: bisque;
-    text-shadow: 2px 1px 1px  black;
+    text-shadow: 2px 1px 1px black;
     background-color: rgb(231, 158, 0);
     border: 2px solid rgb(0, 0, 0);
     border-radius: 5px;
 }
 
-#th1{
+#th1 {
     width: 200px;
 }
 
-tr{width: 200px;
-background-color: rgb(91, 107, 247);
-font-weight: bold;
+tr {
+    width: 200px;
+    background-color: rgb(91, 107, 247);
+    font-weight: bold;
 }
