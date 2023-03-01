@@ -13,6 +13,11 @@
     margin-top: 30px;
 }
 
+p{
+    z-index: 1;
+    font-size: 20px;
+    color: blue;
+}
 
 .nav{
     height:80px;
@@ -51,6 +56,15 @@
     margin-left: 16px;
 }
 
+#sino{
+    
+}
+
+
+#sino a{
+text-decoration: none;
+color: aliceblue;
+}
 
 #siup{
     background-image: url('./pic/register-14.png');
