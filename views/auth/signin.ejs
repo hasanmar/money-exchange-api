@@ -1,15 +1,58 @@
+
+
+
+
+
+
+<div >
+    <nav class="nav">
+        <div class="nav-pic">
+            <div id="accadd"></div><br>
+        <a href="/account/add">Account Add</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="siin"></div><br>
+            <a href="/auth/signin">Sign in</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="siup"></div><br>
+            <a href="/auth/signup">Sign up</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="trans"></div><br>
+            <a href="/transaction/new">transaction</a>
+        </div>
+
+        <div class="nav-pic">
+            <div id="acind"></div><br>
+            <a href="/account/index">ACC.index</a>
+        </div>
+        
+        
+        
+        
+    </nav>
+</div>
+
+<div id="signin-main">
+    <div id="signin-info">
+    <div id="signin-logo"></div>
+
 <h1> Sign In </h1>
 
 <form method="POST" action="/auth/signin">
 
     <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="emailAddress" class="form-control" />
+        <label class="signin-label">Email Address</label><br>
+        <input type="email" name="emailAddress" class="signin-input" />
     </div>
 
     <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control" />
+        <label class="signin-label">Password</label><br>
+        <input type="password" name="password" class="signin-input" />
     </div>
 
     <br>
@@ -24,3 +67,6 @@
     </div>
 
 </form>
+</div>
+
+</div>

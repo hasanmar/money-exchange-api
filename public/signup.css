@@ -1,27 +1,81 @@
 #signup-style{
     width: 96%;
-    height: 550px;
-    background-color: aliceblue;
+    height: 600px;
     border-radius: 40px;
     margin-left: 26px;
     margin-bottom: 20px;
     display: flex;
-    justify-content:space-between;
+    justify-content:end;
     overflow: hidden;
+    background-image: url('./pic/3734607.jpg');
+    background-size: contain;
+    margin-top: 30px;
 }
 
 #signup-style-info{
-    width: 300px;
+    width: 500px;
     height: 100%;
-    background-color: blue;
+    background-color: rgb(231, 158, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    
 }
 
-#signup-style-info2{
-    width: 300px;
-    height: 500px;
-    background-color: rgb(114, 114, 223);
+
+#signup-style-info h1{
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    color: aliceblue;
+    text-shadow: 2px 1px 2px black;
 }
+
+
+#signup-style-info button{
+    margin-left: 100px;
+    height: 30px;
+    width: 70px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: rgb(231, 197, 0);
+    background-color: rgb(11, 0, 109);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    box-shadow: 2px 1px 2px black;
+} 
+
+
+#addicon{
+    background-image: url('./pic/add_icon.png');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    margin: 0;
+}
+
+
+
+
+.signup-label{
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: bisque;
+    text-shadow: 2px 1px 1px  black;
+}
+
+.signup-input{
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
