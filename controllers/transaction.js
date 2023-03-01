@@ -25,10 +25,16 @@ exports.transaction_add_get = (req, res) => {
 }
 
 exports.transaction_add_update = (req, res) => {
+    var currentdate = new Date();
+    var datetime = currentdate.getDate() + "/"
+        + (currentdate.getMonth() + 1) + "/"
+        + currentdate.getFullYear() + " at "
+        + currentdate.getHours() + ":"
+        + currentdate.getMinutes()
     var moneyToSend = req.body.amountSend
-    console.log(moneyToSend);
     const senderAccNum = req.query.senderAccount
     const receiverAccNum = req.body.receiverAcc
+    var moneyRate
 
     let senderAccount;
     let receiverAccount;
@@ -37,27 +43,36 @@ exports.transaction_add_update = (req, res) => {
         senderAcc: senderAccNum,
         receiverAcc: receiverAccNum
     })
+    if (receiverAccNum === undefined || receiverAccNum === '' || isNaN(receiverAccNum) || receiverAccNum.length !== 11) return res.status(400).send(`account number '${receiverAccNum}' is not valid.`)
+    if (moneyToSend === undefined || moneyToSend === '' || isNaN(moneyToSend) || moneyToSend < 1) return res.status(400).send(`enter a number above 0 to send.`)
 
     Account.findOne({
         accountNumber: receiverAccNum
-    }).then(account => {
-        receiverAccount = account
-        transaction.currency = receiverAccount.currency
-    }).catch(err => { console.log(err) })
+    }).populate('user')
+        .then(account => {
+            receiverAccount = account
+        }).catch(err => { console.log(err + 'احسنت') })
+
 
     Account.findOne({
         accountNumber: senderAccNum
     })
+        .populate('user')
         .then(account => {
+            console.log(account.user);
             senderAccount = account
+            if (receiverAccount === null || receiverAccount === undefined) return res.status(400).send('account does not exist.')
             transaction.currency = senderAccount.currency + '_' + receiverAccount.currency
             console.log(transaction.currency);
             if (senderAccount.balance >= moneyToSend) {
                 if (senderAccount.currency === receiverAccount.currency) {
+                    console.log(receiverAccount.user);
                     senderAccount.balance = senderAccount.balance - moneyToSend
                     receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyToSend)
-                    senderAccount.transactions.push(` sent ${senderAccount.currency} ${moneyToSend} to ${receiverAccount.accountName}`)
-                    receiverAccount.transactions.push(` received ${senderAccount.currency} ${moneyToSend} from ${senderAccount.accountName}`)
+                    senderAccount.transactions.push(` sent ${senderAccount.currency} ${moneyToSend} to ${receiverAccount.user.emailAddress} on ${datetime}`)
+                    receiverAccount.transactions.push(` received ${senderAccount.currency} ${moneyToSend} from ${senderAccount.user.emailAddress} on ${datetime}`)
+                    transaction.transcationString = `${senderAccNum} sent ${senderAccount.currency + moneyToSend} to ${receiverAccNum} on ${datetime}`
+                    transaction.save().then(console.log('transaction saved')).catch(err => { console.log(err); })
                     receiverAccount.save().then(data => {
                         console.log(data);
                     }).catch(err => {
@@ -66,19 +81,20 @@ exports.transaction_add_update = (req, res) => {
                     senderAccount.save()
                         .then(data => {
                             console.log(data);
-                            res.redirect('account/index')
+                            res.redirect('/account/index')
                         }).catch(err => {
                             console.log(err);
                         })
                 } else {
                     Rate.findOne({ currencyCombination: transaction.currency })
                         .then(r => {
-                            console.log(r + '\n' + r.rate);
-                            moneyToSend = moneyToSend * r.rate
+                            moneyRate = moneyToSend * r.rate
                             senderAccount.balance = senderAccount.balance - moneyToSend
-                            receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyToSend)
-                            senderAccount.transactions.push(` sent ${senderAccount.currency} ${req.body.amountSend} to ${receiverAccount.accountName}`)
-                            receiverAccount.transactions.push(` received ${receiverAccount.currency} ${moneyToSend} from ${senderAccount.accountName}`)
+                            receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyRate)
+                            senderAccount.transactions.push(` sent ${senderAccount.currency} ${moneyToSend} to ${receiverAccount.user.emailAddress} on ${datetime}`)
+                            receiverAccount.transactions.push(` received ${receiverAccount.currency} ${moneyRate} from ${senderAccount.user.emailAddress} on ${datetime}`)
+                            transaction.transcationString = `${senderAccNum} sent ${senderAccount.currency + moneyToSend} to ${receiverAccNum} on ${datetime}`
+                            transaction.save().then(console.log('transaction saved')).catch(err => { console.log(err); })
                             receiverAccount.save().then(data => {
                                 console.log(data);
                             }).catch(err => {
@@ -87,7 +103,7 @@ exports.transaction_add_update = (req, res) => {
                             senderAccount.save()
                                 .then(data => {
                                     console.log(data);
-                                    res.redirect('account/index')
+                                    res.redirect('/account/index')
                                 }).catch(err => {
                                     console.log(err);
                                 })
@@ -102,4 +118,5 @@ exports.transaction_add_update = (req, res) => {
 
         })
         .catch(err => { console.log(err); })
+
 }

@@ -14,6 +14,7 @@ const layout = require('express-ejs-layouts')
 app.use(layout)
 
 
+
 const indexRoute = require('./routes/index')
 const authRoute = require('./routes/auth')
 const accountRoute = require('./routes/accounts')
@@ -29,6 +30,10 @@ app.use(methodOverride('_method'))
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function (req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+})
 
 
 

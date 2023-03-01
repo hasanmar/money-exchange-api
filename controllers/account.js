@@ -3,6 +3,7 @@ const Account = require("../models/Account");
 // create account
 // {user: {"_id": req.user.id}}
 exports.account_create_get = (req, res) => {
+  console.log(req.session);
   Account.find()
     .then((accounts) => {
       res.render("account/add", { accounts });
@@ -49,10 +50,10 @@ exports.create_account_post = (req, res) => {
 
 // account index
 exports.account_index_get = (req, res) => {
-  console.log(req.session.passport.user);
   Account.find({ user: req.session.passport.user })
     .then((account) => {
-      console.log(account[0].accountNumber);
+      console.log(account);
+      if (account === [] || account === null || account === undefined || account.length < 1) return res.render("account/add")
       res.render("account/index", { account });
     })
     .catch((err) => {
