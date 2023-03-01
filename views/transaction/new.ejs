@@ -4,11 +4,13 @@
     <h1>
         <%= k + 1 %>
     </h1>
-    <%= e.accountName %>
-        <%= e.accountNumber %>
-            <%= e.currency %>
-                <%= e.balance %>
-                    <%= e.transactions %>
-                        <%= e.user %>
-                            <a href="/transaction/add?senderAccount=<%= e.accountNumber %>">send money</a>
-                            <% }) %>
+    <h1> account name: <%= e.accountName %>
+    </h1>
+    <h1> account number <%= e.accountNumber %>
+    </h1>
+    <h1> balance: <%= e.currency %>
+            <%= e.balance %>
+    </h1>
+
+    <a href="/transaction/add?senderAccount=<%= e.accountNumber %>">send money</a>
+    <% }) %>

@@ -16,4 +16,16 @@ router.post("/auth/signin", authCntrl.auth_signin_post);
 router.get("/auth/forget", authCntrl.auth_forget_get);
 router.post("/auth/forget", authCntrl.auth_forget_post);
 
-module.exports = router;
+router.get("/auth/updatepassword", authCntrl.auth_update_get);
+
+// router.get('/auth/signout', authCntrl.auth_signout_get)
+
+
+router.get('/auth/forget', authCntrl.auth_forget_get)
+router.post('/auth/forget', authCntrl.auth_forget_post)
+
+// router.get('/auth/updatepassword', authCntrl.auth_update_get);
+// router.post('/auth/updatepassword', authCntrl.auth_changepassword_post )
+
+
+module.exports = router
