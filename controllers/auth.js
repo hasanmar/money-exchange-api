@@ -38,22 +38,22 @@ exports.auth_signin_post = passport.authenticate("local", {
   failureRedirect: "/auth/signin",
 });
 
-// exports.auth_signout_get = (req, res) => {
-//   req.logout(function (err) {
-//     if (err) {
-//       return next(err);
-//     }
-//   });
-//   res.redirect("/auth/signin");
-// };
+exports.auth_signout_get = (req, res) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+  });
+  res.redirect("/auth/signin");
+};
 
 exports.auth_forget_get = (req, res) => {
   res.render("auth/forget");
 };
 
-exports.auth_update_get = (req, res) => {
-  res.render("auth/updatepassword");
-};
+// exports.auth_update_get = (req, res) => {
+//   res.render("auth/updatepassword");
+// };
 
 // exports.auth_forget_post = passport.authenticate("local", {
 //     successRedirect: "/auth/updatepassword",
@@ -62,9 +62,10 @@ exports.auth_update_get = (req, res) => {
 
 exports.auth_forget_post = (req, res) => {
   let key = req.body.recoveryKey;
-
-  let checkUser = User.findOne({ emailAddress: req.body.email })
+  var checkUser 
+   User.findOne({ emailAddress: req.body.email })
     .then((user) => {
+      checkUser = user;
       let isValidKey = bcrypt.compareSync(key, user.recoveryKey) ? true : false;
       console.log(isValidKey);
       if (!isValidKey) {
@@ -78,6 +79,7 @@ exports.auth_forget_post = (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+    
 };
 
 
