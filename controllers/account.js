@@ -49,7 +49,7 @@ exports.create_account_post = (req, res) => {
 
 // account index
 exports.account_index_get = (req, res) => {
-  console.log(req.session.passport.user);
+  // console.log(req.session.passport.user);
   Account.find({ user: req.session.passport.user })
     .then((account) => {
       console.log(account[0].accountNumber);
