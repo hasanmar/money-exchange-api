@@ -32,7 +32,6 @@ exports.transaction_add_update = (req, res) => {
         + currentdate.getHours() + ":"
         + currentdate.getMinutes()
     var moneyToSend = req.body.amountSend
-    console.log(moneyToSend);
     const senderAccNum = req.query.senderAccount
     const receiverAccNum = req.body.receiverAcc
     var moneyRate
@@ -44,24 +43,27 @@ exports.transaction_add_update = (req, res) => {
         senderAcc: senderAccNum,
         receiverAcc: receiverAccNum
     })
+    if (receiverAccNum === undefined || receiverAccNum === '' || isNaN(receiverAccNum) || receiverAccNum.length !== 11) return res.status(400).send(`account number '${receiverAccNum}' is not valid.`)
+    if (moneyToSend === undefined || moneyToSend === '' || isNaN(moneyToSend) || moneyToSend < 1) return res.status(400).send(`enter a number above 0 to send.`)
 
     Account.findOne({
         accountNumber: receiverAccNum
     }).populate('user')
         .then(account => {
             receiverAccount = account
-            transaction.currency = receiverAccount.currency
-        }).catch(err => { console.log(err) })
+        }).catch(err => { console.log(err + 'احسنت') })
+
 
     Account.findOne({
         accountNumber: senderAccNum
     })
         .populate('user')
         .then(account => {
+            console.log(account.user);
             senderAccount = account
+            if (receiverAccount === null || receiverAccount === undefined) return res.status(400).send('account does not exist.')
             transaction.currency = senderAccount.currency + '_' + receiverAccount.currency
             console.log(transaction.currency);
-
             if (senderAccount.balance >= moneyToSend) {
                 if (senderAccount.currency === receiverAccount.currency) {
                     console.log(receiverAccount.user);
@@ -69,6 +71,8 @@ exports.transaction_add_update = (req, res) => {
                     receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyToSend)
                     senderAccount.transactions.push(` sent ${senderAccount.currency} ${moneyToSend} to ${receiverAccount.user.emailAddress} on ${datetime}`)
                     receiverAccount.transactions.push(` received ${senderAccount.currency} ${moneyToSend} from ${senderAccount.user.emailAddress} on ${datetime}`)
+                    transaction.transcationString = `${senderAccNum} sent ${senderAccount.currency + moneyToSend} to ${receiverAccNum} on ${datetime}`
+                    transaction.save().then(console.log('transaction saved')).catch(err => { console.log(err); })
                     receiverAccount.save().then(data => {
                         console.log(data);
                     }).catch(err => {
@@ -84,13 +88,13 @@ exports.transaction_add_update = (req, res) => {
                 } else {
                     Rate.findOne({ currencyCombination: transaction.currency })
                         .then(r => {
-                            console.log(r + '\n' + r.rate);
                             moneyRate = moneyToSend * r.rate
-                            console.log(moneyRate);
                             senderAccount.balance = senderAccount.balance - moneyToSend
                             receiverAccount.balance = parseFloat(receiverAccount.balance) + parseFloat(moneyRate)
                             senderAccount.transactions.push(` sent ${senderAccount.currency} ${moneyToSend} to ${receiverAccount.user.emailAddress} on ${datetime}`)
                             receiverAccount.transactions.push(` received ${receiverAccount.currency} ${moneyRate} from ${senderAccount.user.emailAddress} on ${datetime}`)
+                            transaction.transcationString = `${senderAccNum} sent ${senderAccount.currency + moneyToSend} to ${receiverAccNum} on ${datetime}`
+                            transaction.save().then(console.log('transaction saved')).catch(err => { console.log(err); })
                             receiverAccount.save().then(data => {
                                 console.log(data);
                             }).catch(err => {
@@ -114,4 +118,5 @@ exports.transaction_add_update = (req, res) => {
 
         })
         .catch(err => { console.log(err); })
+
 }
