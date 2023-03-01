@@ -35,20 +35,32 @@
 
     <div id="main-header"><h1>Account Index</h1></div>
 
-
+<div id="flexm">
+    <div id="flexp">
+        
 <% account.forEach(function(account) {%>
     <div class="accf">
+        <div id="det">
         <h2>Account Name: <%= account.accountName %></h2><br>
         <h3>Account Number: <%= account.accountNumber %></h3><br>
         <h3>Currency: <%= account.currency %></h3><br>
         <h3>Balance: <%= account.balance%></h3>
-        <div>
-        <a href="/account/detail?id=<%= account._id %>">Show Details</a><br>
-        <a href="/account/delete?id=<%= account._id %>">delete</a>
+        </div>
+
+
+        <div id="deta">
+        <div><a id="a1" href="/account/detail?id=<%= account._id %>">Show Details</a><br></div>
+        <div><a id="a2" href="/account/delete?id=<%= account._id %>">delete</a></div>
         </div>
     </div>
+    <%}); %>
+    
+</div>
 
+<div id="flexp2">
+    <div id="picacc"></div>
+</div>
+</div>
 
-<%}); %>
 
 </div>
