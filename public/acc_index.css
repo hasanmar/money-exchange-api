@@ -16,6 +16,31 @@
     
 }
 
+
+#flexm{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#flexp{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#picacc{
+    background-image: url('./pic/accounting-group-meeting-o29xcdoxqb5zeftv.jpg');
+    width: 560px;
+    height: 600px;
+    background-size: cover;
+    margin-right: 40px;
+    margin-top: 30px;
+    border-radius: 40px;
+    
+}
+
 #main-header h1{
     margin: 0;
     margin-top: 30px;
@@ -34,26 +59,70 @@
     margin-left: 20px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.082);
-    width: 700px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 190px;
 }
 
 
-.accf div{
+
+
+
+
+.accf #det{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.accf #deta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
     width: 100px;
     height: 100px;
-    border: 2px solid black;
-    display: inline-block;
+    margin-top: 45px;
+    margin-right: 40px;
 }
 
 
-.accf div a{
+.accf #deta div{
+    background-color: rgb(190, 37, 37);
+    text-align: center;
+    height: 30px;
+    width: 120px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+
+.accf div #a1{
     display: inline-block;
     float: right;
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     margin-right: 10px;
     
 }
+.accf div #a2{
+    display: inline-block;
+    float: right;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-right: 35px;
+    
+}
+
+
+.accf div div a{
+    margin-top: 5px;
+}
+
+
 .accf h2{
     display: inline-block;
     margin-left: 10px;
